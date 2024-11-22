@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20%;
+      background-color: #f4f4f9;
+    }
+    .checkbox-container {
+      display: inline-block;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.5);
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkbox-container">
+    <h2>Check if you're not a robot</h2>
+    <form id="robot-check-form" action="https://example.com" method="GET">
+      <label>
+        <input type="checkbox" id="robot-check" onclick="toggleButton()"> I'm not a robot
+      </label>
+      <br>
+      <button type="submit" id="proceed-btn" disabled>Proceed</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleButton() {
+      const checkbox = document.getElementById("robot-check");
+      const button = document.getElementById("proceed-btn");
+      button.disabled = !checkbox.checked;
+    }
+  </script>
+</body>
+</html>
